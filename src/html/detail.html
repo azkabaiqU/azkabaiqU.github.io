@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molokal - detail</title>
+    <link rel="stylesheet" href="/fontAwesome/css/all.min.css">
+    <link href="/src/style.css" rel="stylesheet">
+    <script src="/src/js/detail.js" defer></script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+
+
+    <style>
+        @media (max-width: 804px) {
+            .column-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar normal-->
+    <nav class="sticky justify-center flex | bg-white w-full z-50  left-0 top-0  pt-[15px]">
+        <div class="w-[95%] borderGray-b ">
+            <div class="flex justify-between items-center | md:pb-[15px] pb-[10px] ">
+
+                <!-- logo - nav -->
+                <div class="flex items-center">
+                    <a href="/src/html/index.html#berandaPage" class="flex justify-center items-center  cursor-pointer">
+                        <img src="/img/logo.png" class="w-[30px] h-[30px]" alt="">
+                        <h1 class="titleLogo | pjs-eb ml-1">Molokal</h1>
+                    </a>
+                    <p class="md:block hidden pjs-l text-[20px] text-[#F0F0F0] xl:mx-[26px] mx-[20px] duration-100 ">|
+                    </p>
+                    <div class="md:block hidden">
+                        <ul class="navbar-top |  my-[10px] flex pjs-l textGray  max-w-[380px] duration-100">
+                            <li class="navbarBeranda  |  xl:mr-[16px] mr-[10px] duration-100">
+                                <a href="/src/html/index.html#berandaPage">Beranda</a> </li>
+                            <li class="navbarArtikel |  xl:mx-[16px] mx-[10px] duration-100"><a
+                                    href="/src/html/index.html">Artikel</a> </li>
+                            <li class="navbarPilihan  |   xl:mx-[16px] mx-[10px] w-[100px] duration-100">
+                                <a href="/src/html/index.html">Pilihan
+                                    Editor</a>
+                            </li>
+                            <li class="navbarPenulis  |   xl:ml[16px] ml-[10px] duration-100"><a
+                                    href="/src/html/index.html">Penulis</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- other (login, language, search) -->
+                <div class="flex items-center">
+                    <div id="search-container"
+                        class="md:mr-0 mr-[5px] flex  items-center rounded-full borderGray bgGray transition-all duration-300 cursor-pointer">
+
+                        <!-- Pastikan lebar ikon tetap statis -->
+                        <i
+                            class="flex-shrink-0 sm:py-3 py-2  sm:w-[40px] w-[33px] text-center text-black/40 fa-solid fa-search fa-md textGray text-[16px]"></i>
+                        <input id="search-input" type="text" placeholder="Cari artikel budaya..."
+                            class="lg:w-[150px]  truncate w-0 duration-300 placeholder:text-sm placeholder:text-black/40 bg-transparent focus:outline-none">
+                    </div>
+
+                    <p class="md:block hidden pjs-l text-[20px] text-[#F0F0F0] xl:mx-[26px] mx-[20px] duration-100">|
+                    </p>
+                    <a
+                        class="hidden lg:block cursor-pointer items-center mr-3 |  py-3 px-5  rounded-full borderGray bg-[#DC4834] text-white hover:bg-transparent hover:text-black/70 duration-100">
+                        <p class=" text-md">Langanan</p>
+                    </a>
+                    <a
+                        class="hidden lg:block flex cursor-pointer items-center |  py-3  px-5  rounded-full borderGray  bgGray hover:bg-transparent hover:text-black/70 duration-100">
+                        <p class="text-md">Login</p>
+                    </a>
+                    <a
+                        class="md:ml-0 ml-[5px] lg:hidden block flex cursor-pointer items-center |  sm:py-3 py-2 sm:px-3.5 px-2.5 rounded-full borderGray  bgGray hover:bg-transparent hover:text-black/70 duration-100">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="md:hidden block pb-[10px]">
+                <ul class="navbar-top | my-[10px] flex pjs-l textGray duration-100 justify-between w-full ">
+                    <li class="navbarBeranda |  xl:mr-[16px] mr-[10px] duration-100">
+                        <a href="/src/html/index.html#berandaPage">Beranda</a> </li>
+                    <li class="navbarArtikel  |  xl:mx-[16px] mx-[10px] duration-100"><a
+                            href="/src/html/index.html">Artikel</a>
+                    </li>
+                    <li class="navbarPilihan  |   xl:mx-[16px] mx-[10px] w-[100px] duration-100"><a
+                            href="/src/html/index.html">Pilihan
+                            Editor</a>
+                    </li>
+                    <li class="navbarPenulis |   xl:ml[16px] ml-[10px] duration-100"><a
+                            href="/src/html/index.html">Penulis</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+    <!-- navbar animate -->
+    <nav
+        class="navbar-news | sticky justify-center flex | bg-white left-0 w-full z-40  py-[10px] lg:top-20 md:top-[73px] sm:top-[120px] top-[120px]">
+        <div class="flex items-center justify-between  px-[10px] | rounded-lg  bgGray  w-[95%]">
+            <a href="javascript:history.back()"
+                class="sm:text-[18px] text-[14px] pjs-m textRed  py-[10px] sm:min-w-[100px] min-w-[120px]">
+                <span class=" "><i class=" fa-solid fa-angle-left mr-[10px]"></i></span>Go Back</a>
+            <h1 id="title2"
+                class="lg:w-[600px] md:w-[500px] sm:w-[400px] w-full pjs-m textBlack sm:text-[16px] text-[14px] text-right truncate duration-100">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, nihil!</h1>
+        </div>
+    </nav>
+
+    <!-- heading content -->
+    <container id="topDetail" class="flex justify-center items-center | w-full pt-5px">
+        <div class="sm:w-[95%] w-[90%] flex items-center ">
+            <div>
+                <h1 id="title" class="pjs-m sm:text-[52px] text-[34px] text-black/80 sm:leading-[80px] leading-normal">
+                </h1>
+                <p id="desc" class="mt-[12px] pjs-l leading-[24px] sm:text-[16px] text-[14px] text-justify">
+                </p>
+                <div class="mt-[24px] flex items-center justify-start">
+                    <p id="type" class="textRed pjs-r text-[14px] ">Wisata</p>
+                    <p class="pjs-b text-[8px] text-black/10 mx-[12px]">|</p>
+                    <p id="membaca" class="textBlack pjs-r text-black/80 text-[14px] "></p>
+                </div>
+                <div class="mt-[32px] w-full sm:h-[640px] h-[400px]  overflow-hidden sm:rounded-3xl rounded-lg">
+                    <img id="imgBesar" class="w-full h-full object-cover " src="" alt="">
+                </div>
+                <p class="mt-[16px] text-[12px] pjs-r text-black leading-[16px] text-center">Pic by browser
+                </p>
+            </div>
+        </div>
+    </container>
+
+    <!-- isi content -->
+    <container class="flex justify-center items-center | w-full mt-[72px] ">
+        <div class="sm:w-[95%] w-[90%]   flex lg:flex-row flex-col  pb-[24px]  border-b border-black/5  ">
+            <!-- isi content text (2bagian) -->
+            <div class="w-full h-full  lg:pr-[40px] pr-0">
+
+                <!-- bagian 1 -->
+                <div class="flex ">
+                    <div class="sm:block hidden mr-[20px] w-[264px] h-auto overflow-hidden rounded-xl flex-shrink-0">
+                        <img id="img1" class="object-cover w-full h-full" src="" alt="">
+                    </div>
+                    <div class="mt-[12px] pjs-l sm:text-[16px] text-[14px]">
+                        <!-- s1 p1 -->
+                        <p id="textS1P1" class=" leading-[24px] text-justify"></p>
+
+                        <!-- s1 p2 -->
+                        <p id="textS1P2" class="mt-[32px] leading-[24px] text-justify"></p>
+
+                        <!-- s1 p3 -->
+                        <p id="textS1P3" class="mt-[32px] leading-[24px] text-justify"></p>
+                    </div>
+                </div>
+                <!-- bagian2 -->
+                <div class="mt-[32px]">
+                    <!-- s2 p1 -->
+                    <p id="textS2P1" class="leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify"></p>
+
+                    <!-- s2 p2 -->
+                    <p id="textS2P2" class="leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                    <div class="mt-[32px] w-full sm:h-[332px] h-[250px] overflow-hidden sm:rounded-xl rounded-lg">
+                        <img id="img2" class="w-full h-full object-cover" src="" alt="">
+                    </div>
+                    <!-- s2 p3 -->
+                    <p id="textS2P3" class="mt-[32px] leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                    <!-- s2 p4 -->
+                    <p id="textS2P4" class="mt-[32px] leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                    <!-- s2 p5 -->
+                    <p id="textS2P5" class="mt-[32px] leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                    <!-- s2 p6 -->
+                    <p id="textS2P6" class="mt-[32px] leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                    <!-- s2 p7 -->
+                    <p id="textS2P7" class="mt-[32px] leading-[24px]  pjs-l sm:text-[16px] text-[14px] text-justify">
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- pembuat, data, waktu content terkait -->
+            <div class="column-layout flex lg:w-[360px]   w-full h-full lg:mt-0 mt-[50px] px-[10px]">
+                <div class="flex-col flex items-start justify-end  w-full  ">
+                    <!-- pfp name -->
+                    <div class="flex items-center pjs-m ">
+                        <div class="sm:w-[56px] w-[50px] sm:h-[56px] h-[50px]  overflow-hidden rounded-full mr-[12px]">
+                            <img id="pfp" class="object-cover  w-full h-full" src="" alt="img">
+                        </div>
+                        <div>
+                            <h1 id="nama" class=" sm:text-[20px] text-[18px] textBlack truncate leading-[26px] pjs-m">
+                            </h1>
+                            <p class="sm:text-[16px] text-[14px] text-black/60 pjs-r">Penulis</p>
+                        </div>
+                    </div>
+
+                    <!-- di buat -->
+                    <div class="mt-[32px]">
+                        <p class="pjs-l text-black/40 sm:text-[16px] text-[14px]">Dibuat</p>
+                        <div class="mt-[12px] flex justify-start items-center leading-[20px]">
+                            <p id="dibuat" class="sm:text-[16px] text-[14px] text-black pjs-r"></p>
+                            <p class="pjs-l text-[20px] text-black/10 px-[16px] ">|</p>
+                            <p id="jam" class="sm:text-[16px] text-[14px] text-black/60 pjs-r"></p>
+                        </div>
+                        <p class="mt-[32px] pjs-l text-black/40 sm:text-[16px] text-[14px]">Bagikan</p>
+                        <div class="mt-[12px] flex justify-start items-center leading-[20px]">
+                            <ul class="flex">
+                                <li class="mr-[34px]"><i class="fa-solid fa-link text-[15px] "></i></li>
+                                <li class="mr-[34px]"><i class="fa-brands fa-instagram text-[15px] "></i></li>
+                                <li class="mr-[34px]"><i class="fa-brands fa-facebook text-[15px] "></i></li>
+                                <li class="mr-[34px]"><i class="fa-brands fa-twitter text-[15px] "></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- content terkai -->
+                    <div class="mt-[52px] lg:block hidden">
+                        <h1 class="sm:text-[28px] text-[20px] text-black pjs-m">Content Terkait</h1>
+                        <hr class="w-full border-black/5 mb-[24px] mt-[12px]">
+
+                        <div class="">
+                            <!-- card1 -->
+                            <div class=" ">
+                                <div class="w-[360px] h-[332px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/564x/4e/e8/14/4ee81419918e99fa81f858bec9db224f.jpg"
+                                        alt="">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full"
+                                                src="https://awsimages.detik.net.id/community/media/visual/2024/02/06/sweet-home-3-2026_11.jpeg?w=500&q=90"
+                                                alt="img">
+                                        </div>
+                                        <h1 class=" text-[24px] pjs-r text-black">Cha Hyun So</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  text-[16px] text-black/40 pjs-r">1 jam yang lalu</p>
+                                    </div>
+                                    <h1 class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Bahasa Nusantara: Kekayaan Linguistik yang Menjaga Identitas Bangsa</h1>
+                                    <p class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Indonesia dikenal sebagai negara dengan keragaman bahasa yang luar biasa.
+                                        Artikel ini mengeksplorasi kekayaan bahasa daerah di Nusantara, mulai dari
+                                        bahasa Jawa, Sunda, hingga Toraja, serta peran pentingnya dalam menjaga
+                                        identitas budaya setiap suku bangsa. Di tengah arus globalisasi, bahasa-bahasa
+                                        ini menghadapi tantangan, namun upaya pelestariannya menjadi simbol penting
+                                        dalam menjaga keanekaragaman dan warisan budaya Indonesia.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class=" text-[16px] textRed">Bahasa & Sastra</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  text-[16px]  textBlack pjs-r">belum membaca</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- line -->
+                            <hr class="w-full my-[32px] border-black/5 ">
+                            <!-- card2 -->
+                            <div class=" ">
+                                <div class="w-[360px] h-[332px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/736x/2d/4a/35/2d4a35a0a95ff4d632d69be7728cf2fb.jpg"
+                                        alt="">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full"
+                                                src="https://awsimages.detik.net.id/community/media/visual/2024/02/06/sweet-home-3-2026_11.jpeg?w=500&q=90"
+                                                alt="img">
+                                        </div>
+                                        <h1 class=" text-[24px] pjs-r text-black">Cha Hyun So</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  text-[16px] text-black/40 pjs-r">1 jam yang lalu</p>
+                                    </div>
+                                    <h1 class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Festival Budaya Nusantara: Merayakan Keberagaman Melalui Seni dan Tradisi</h1>
+                                    <p class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Festival budaya di Indonesia adalah cara yang luar biasa untuk merayakan
+                                        keberagaman
+                                        suku, adat, dan tradisi di Nusantara. Artikel ini mengulas beberapa festival
+                                        budaya
+                                        terkenal, seperti Festival Danau Toba, Festival Lembah Baliem, dan Jember
+                                        Fashion
+                                        Carnaval. Setiap festival menampilkan keindahan seni tari, musik, serta
+                                        kerajinan
+                                        khas daerah, sekaligus menjadi ajang pelestarian budaya yang mendekatkan
+                                        masyarakat
+                                        pada akar tradisi mereka.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class=" text-[16px] textRed">Acara & Festival</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  text-[16px]  textBlack pjs-r">belum membaca</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </container>
+
+    <!-- selengkapnya tentang...... -->
+    <container class="flex justify-center items-center | w-full mt-[72px] ">
+        <div class="sm:w-[95%] w-[90%]  ">
+            <div class="text-left border-b border-black/5 w-full pb-[12px]">
+                <h1 class="pjs-m sm:text-[36px] text-[34px] text-[#212121] sm:leading-[46px]">Selengkapnya<br
+                        class="sm:hidden block"> tentang “<span id="type2">Acara
+                        &
+                        Festival</span>” </h1>
+                <div class="flex md:flex-row flex-col lg:items-center items-start justify-between">
+                    <p class="text-black/60 sm:leading-[26px] pjs-l sm:text-[16px] text-[14px] flex"><span
+                            class="textRed text-xl md:block  hidden mr-[12px]">•</span>
+                        Temukan berbagai artikel dan berita menarik mulai dari wisata alam indah hingga budaya-budaya
+                        yang cantik!</p>
+                    <a href="#"
+                        class="sm:mt-0 mt-[10px] pjs-m textRed hover:text-red-700 sm:text-[16px] text-[14px] duration-75 md:ml-4 ml-0 min-w-[130px] ">Lihat
+                        Semua <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+                </div>
+            </div>
+            <div class="sm:overflow-x-scroll overflow-x-visible mt-[24px] rounded-xl ">
+                <div
+                    class="flex sm:flex-row flex-col items-start  duration-500 w-full h-full ease-in-out transition-transform ">
+                    <!-- card -->
+                    <div id="card1" class="sm:mr-[20px] mr-0 sm:w-[440px] w-auto">
+                        <a href="src/html/detail.html?id=2" class="">
+                            <div class="sm:w-[440px] w-auto sm:h-[320px] h-[300px] overflow-hidden rounded-xl">
+                                <img class="object-cover w-full h-full"
+                                    src="https://i.scdn.co/image/ab6761610000517446d7c4bbfbc22b639d1591a3" alt="">
+                            </div>
+                            <div class="mt-[12px]">
+                                <div class="flex items-center pjs-m w-full">
+                                    <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                        <img class="object-cover  w-full h-full" src="/img/lensV2.png" alt="img">
+                                    </div>
+                                    <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Oggie</h1>
+                                    <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[16px] text-black/40 pjs-l">1 jam yang lalu</p>
+                                </div>
+                                <h1
+                                    class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                    Ishowspeed
+                                    bertemu dengan “Kera viral” di Malang</h1>
+                                <p
+                                    class="sm:mb-[12px] mb-[5px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                    Melalui Instagram resminya, IShowSpeed mengumumkan jika live streaming tour SEA
+                                    alias
+                                    Asia
+                                    Tenggara telah berakhir. Banyak negara di Asia Tenggara yang IShowSpeed kunjungi
+                                    saat
+                                    melakukan tour ini seperti Thailand, Filipina, Vietnam, Kamboja, Malaysia,
+                                    Singapura,
+                                    dan
+                                    tentunya Indonesia. Banyak momen-momen lucu, menyenangkan, emosi, hingga mengharukan
+                                    terjadi
+                                    di tour SEA kali ini. Beberapa contohnya adalah saat Speed bertemu dengan Manny
+                                    Pacquaio
+                                    di
+                                    Filipina, bertemu dengan Simu Liu di Singapura, dan menciptakan rekor dunia di
+                                    Indonesia.
+                                    Berikut adalah rekap live streaming IShowSpeed selama tour SEA per negara. Simak
+                                    langsung
+                                    sekarang.
+                                </p>
+                                <div class="flex items-center">
+                                    <h1 class="pjs-r text-[14px] textRed">Acara & Festival</h1>
+                                    <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[14px]  textBlack pjs-r">2 menit membaca</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- card -->
+                    <div id="card2" class="sm:mr-[20px] mr-0 sm:w-[440px] w-auto sm:mt-0 mt-[30px] ">
+                        <a href="src/html/detail.html?id=2" class="">
+                            <div class="sm:w-[440px] w-auto sm:h-[320px] h-[300px] overflow-hidden rounded-xl">
+                                <img class="object-cover w-full h-full"
+                                    src="https://i.scdn.co/image/ab6761610000517446d7c4bbfbc22b639d1591a3" alt="">
+                            </div>
+                            <div class="mt-[12px]">
+                                <div class="flex items-center pjs-m w-full">
+                                    <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                        <img class="object-cover  w-full h-full" src="/img/lensV2.png" alt="img">
+                                    </div>
+                                    <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Oggie</h1>
+                                    <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[16px] text-black/40 pjs-l">1 jam yang lalu</p>
+                                </div>
+                                <h1
+                                    class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                    Ishowspeed
+                                    bertemu dengan “Kera viral” di Malang</h1>
+                                <p
+                                    class="sm:mb-[12px] mb-[5px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                    Melalui Instagram resminya, IShowSpeed mengumumkan jika live streaming tour SEA
+                                    alias
+                                    Asia
+                                    Tenggara telah berakhir. Banyak negara di Asia Tenggara yang IShowSpeed kunjungi
+                                    saat
+                                    melakukan tour ini seperti Thailand, Filipina, Vietnam, Kamboja, Malaysia,
+                                    Singapura,
+                                    dan
+                                    tentunya Indonesia. Banyak momen-momen lucu, menyenangkan, emosi, hingga mengharukan
+                                    terjadi
+                                    di tour SEA kali ini. Beberapa contohnya adalah saat Speed bertemu dengan Manny
+                                    Pacquaio
+                                    di
+                                    Filipina, bertemu dengan Simu Liu di Singapura, dan menciptakan rekor dunia di
+                                    Indonesia.
+                                    Berikut adalah rekap live streaming IShowSpeed selama tour SEA per negara. Simak
+                                    langsung
+                                    sekarang.
+                                </p>
+                                <div class="flex items-center">
+                                    <h1 class="pjs-r text-[14px] textRed">Acara & Festival</h1>
+                                    <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[14px]  textBlack pjs-r">2 menit membaca</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- card -->
+                    <div id="card3" class="sm:mr-[20px] mr-0 sm:w-[440px] w-auto sm:mt-0 mt-[30px] ">
+                        <a href="src/html/detail.html?id=2" class="">
+                            <div class="sm:w-[440px] w-auto sm:h-[320px] h-[300px] overflow-hidden rounded-xl">
+                                <img class="object-cover w-full h-full"
+                                    src="https://i.scdn.co/image/ab6761610000517446d7c4bbfbc22b639d1591a3" alt="">
+                            </div>
+                            <div class="mt-[12px]">
+                                <div class="flex items-center pjs-m w-full">
+                                    <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                        <img class="object-cover  w-full h-full" src="/img/lensV2.png" alt="img">
+                                    </div>
+                                    <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Oggie</h1>
+                                    <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[16px] text-black/40 pjs-l">1 jam yang lalu</p>
+                                </div>
+                                <h1
+                                    class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                    Ishowspeed
+                                    bertemu dengan “Kera viral” di Malang</h1>
+                                <p
+                                    class="sm:mb-[12px] mb-[5px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                    Melalui Instagram resminya, IShowSpeed mengumumkan jika live streaming tour SEA
+                                    alias
+                                    Asia
+                                    Tenggara telah berakhir. Banyak negara di Asia Tenggara yang IShowSpeed kunjungi
+                                    saat
+                                    melakukan tour ini seperti Thailand, Filipina, Vietnam, Kamboja, Malaysia,
+                                    Singapura,
+                                    dan
+                                    tentunya Indonesia. Banyak momen-momen lucu, menyenangkan, emosi, hingga mengharukan
+                                    terjadi
+                                    di tour SEA kali ini. Beberapa contohnya adalah saat Speed bertemu dengan Manny
+                                    Pacquaio
+                                    di
+                                    Filipina, bertemu dengan Simu Liu di Singapura, dan menciptakan rekor dunia di
+                                    Indonesia.
+                                    Berikut adalah rekap live streaming IShowSpeed selama tour SEA per negara. Simak
+                                    langsung
+                                    sekarang.
+                                </p>
+                                <div class="flex items-center">
+                                    <h1 class="pjs-r text-[14px] textRed">Acara & Festival</h1>
+                                    <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                    <p class="textGray  text-[14px]  textBlack pjs-r">2 menit membaca</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </container>
+    <!-- Button -->
+    <container class="flex justify-center items-center | w-full  mt-[24px]">
+        <div
+            class="sm:w-[95%] w-[90%]  relative flex items-center justify-center py-[36px]  border-t border-b border-black/5">
+
+            <!-- dots -->
+            <div class="flex ">
+                <div id="dot1Article" class="w-[24px] h-[8px] bgRed rounded-full mx-[2px] duration-100"> </div>
+            </div>
+        </div>
+    </container>
+
+
+    <!-- footer & backScroll -->
+    <footer class="w-full sm:px-[40px] px-[20px] bgGray mt-[72px] pt-[72px]">
+
+        <!-- bagian 1 -->
+        <div class="flex lg:flex-row flex-col justify-between">
+            <!-- kiri -->
+            <div class="text-left lg:w-[576px] w-full mr-[20px]">
+                <div class="flex  items-center  cursor-pointer">
+                    <img src="/img/logo.png" class="w-[30px] h-[30px]" alt="">
+                    <h1 class="titleLogo | pjs-eb ml-1">Molokal</h1>
+                </div>
+                <p class="sm:text-[18px] text-[16px] pjs-l text-black/80 leading-[18px] mt-[12px]">Situs yang selalu
+                    membawa berita
+                    terbaru perihal budaya Indonesia.</p>
+                <h1 class="pjs-m sm:text-[36px] text-[28px] textBlack mt-[32px] sm:leading-[45px] leading-9">Ingin
+                    mendapatkan update berita
+                    lebih awal? Langganan sekarang!</h1>
+                <p class="pjs-l mt-[12px] sm:text-[16px] text-[14px] text-black/60">Masukan email mu untuk mulai
+                    berlangganan dengan Molokal...</p>
+                <hr class="sm:w-[370px] w-full mt-[24px] border-black/5">
+
+                <div class="flex py-[24px] items-center justify-start w-full ">
+                    <div class="flex items-center | py-3 pr-5  rounded-full borderGray bg-[#EBEBEB]">
+                        <span class="w-full flex justify-center items-center text-center text-black/40">
+                            <i class=" fa-regular fa-envelope fa-md textGray sm:text-[16px] text-[14px]"></i>
+                        </span>
+                        <input type="text" placeholder="Masukan email mu disini..."
+                            class=" sm:w-[220px] w-[200px] placeholder:text-sm placeholder:text-black/40 | bg-transparent focus:outline-none ">
+                    </div>
+                    <a
+                        class=" cursor-pointer items-center sm:ml-[16px] ml-[10px]  |  py-3 px-5  rounded-full borderGray hover:border-black/5 bgRed hover:bg-transparent text-white hover:text-black/70 duration-100">
+                        <p class=" text-md  sm:text-[16px] text-[14px]">Kirim</p>
+                    </a>
+                </div>
+
+            </div>
+            <!-- kanan -->
+            <div class="flex mt-[50px]">
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 mr-[52px]">
+                    <span class="pjs-m text-black ">Navigasi</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Berita
+                            terkini</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a
+                            href="#articlePage">Artikel</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a
+                            href="#pilihanEditorPage">Pilihan Editor</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="#penulisPage">Penulis</a>
+                    </li>
+                </ul>
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 mr-[52px]">
+                    <span class="pjs-m text-black">Perusahaan</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Tentang kami</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Karir</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Media</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="">Kontak</a> </li>
+                </ul>
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 ">
+                    <span class="pjs-m text-black">Sosial Media</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Instagram</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Facebook</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Youtube</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="">x</a> </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- bagian 2 -->
+        <div
+            class="flex lg:flex-row flex-col lg:justify-between justify-start py-[24px] border-t border-b lg:mt-0 mt-[40px] border-black/5">
+            <p class="text-black sm:text-[16px] text-[14px]  pjs-l">©Molokal 2024. All rights reserved.</p>
+            <div>
+                <ul class="sm:flex flex-wrap textBlack items-center sm:text-[16px] text-[14px] lg:mt-0 mt-[10px]">
+                    <li class="hover:underline decoration-solid">Ketentuan Layanan <span
+                            class="pjs-l text-[12px] text-black/10  mx-[36px]">|</span></li>
+
+                    <li class="hover:underline decoration-solid">Layanan Kebijakan <span
+                            class="pjs-l text-[12px] text-black/10  mx-[36px]">|</span></li>
+
+                    <li class="hover:underline decoration-solid">#banggabuatanindonesia🇮🇩 </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- bagian 3 (mouse scroll) -->
+        <div class="flex justify-center items-center py-[44px]">
+            <a href="#topDetail" class="cursor-pointer">
+                <div class="flex justify-center">
+                    <img class="w-[22px]" src="/img/mouse.png" alt="img">
+                </div>
+
+                <p class="text-black/20 pjs-m sm:text-[16px] text-[14px]">Kembali keatas</p>
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

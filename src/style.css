@@ -1,0 +1,227 @@
+
+/* seting */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    /* Sembunyikan scroll bar */
+}
+.berandaPage{
+    scroll-margin-top: 130px;
+}
+.articlePage{
+    scroll-margin-top: 140px;
+}
+
+.pilihanEditorPage{
+    scroll-margin-top: 140px;
+}
+.penulisPage{
+    scroll-margin-top: 140px;
+
+}
+#topDetail{
+    scroll-margin-top: 130px;
+}
+/* responsive */
+
+/* @media (max-width: 1420px) {
+    .middlecard {
+        width: 370px;
+    }
+} */
+
+
+/* light 300*/
+.pjs-l {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+/* regular 400 */
+.pjs-r {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+/* medium  500 */
+.pjs-m {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+/* bold 600*/
+.pjs-b {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+
+}
+
+/* extra bold 800*/
+.pjs-eb {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 800;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+
+}
+
+/* italic 400 */
+.pjs-i {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: italic;
+
+
+}
+
+/* italic bold */
+.pjs-eb-i {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 800;
+    font-optical-sizing: auto;
+    font-style: italic;
+
+
+}
+
+/* color set ==================*/
+.textRed{
+    color:#DC4834 ;
+}
+.bgRed{
+    background-color:#DC4834 ;
+}
+
+.textGray {
+    color: #9E9E9E;
+}
+.textGrayV2 {
+    color: #666666;
+
+}
+
+.textBlack {
+    color: #212121;
+}
+
+.bgGray {
+    background-color: #F5F5F5;
+}
+
+.borderGray {
+    border: 1.3px solid #F0F0F0;
+}
+
+.borderGray-b {
+    border-bottom: 1.3px solid #F0F0F0;
+}
+
+.borderGray-r {
+    border-right: 1.3px solid #F0F0F0;
+}
+
+.borderGray-l {
+    border-left: 1.3px solid #F0F0F0;
+}
+
+.borderGray-t {
+    border-top: 1.3px solid #F0F0F0;
+}
+
+
+/* style the tag ==================== */
+
+
+.titleLogo {
+    font-size: 28px;
+}
+
+/* marquee */
+
+.marquee {
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%; /* Start the text off-screen */
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* navbar */
+
+.navbar-news {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(0); /* Navbar 2 visible by default */
+}
+
+/* ul li */
+
+.navbar-top li {
+
+    cursor: pointer;
+}
+
+.navbar-top li:hover {
+    color: #2b2b2b;
+}
+
+.navbar-budaya li{
+    font-size:12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 30px ;
+    margin-right:12px;
+    cursor: pointer;
+}
+
+/* scroll budaya area */
+
+#scrollBudaya {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.footerList li, .footerList ol {
+    list-style-type: none; 
+    margin-bottom: 10px;
+}
+.footerList li:hover{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #2b2b2b;
+    
+}
+
+.search-bar.wider {
+    width: 300px; /* Atur lebar yang diinginkan saat input diklik */
+}

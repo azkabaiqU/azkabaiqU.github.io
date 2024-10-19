@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molokal</title>
+    <link rel="stylesheet" href="/fontAwesome/css/all.min.css">
+    <link href="/src/style.css" rel="stylesheet">
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="sticky justify-center flex | bg-white w-full z-50  left-0 top-0  pt-[15px]">
+        <div class="w-[95%] borderGray-b ">
+            <div class="flex justify-between items-center | md:pb-[15px] pb-[10px] ">
+                <!-- logo - nav -->
+                <div class="flex items-center">
+                    <a href="#berandaPage" class="flex justify-center items-center  cursor-pointer">
+                        <img src="/img/logo.png" class="w-[30px] h-[30px]" alt="">
+                        <h1 class="titleLogo | pjs-eb ml-1">Molokal</h1>
+                    </a>
+                    <p class="md:block hidden pjs-l text-[20px] text-[#F0F0F0] xl:mx-[26px] mx-[20px] duration-100 ">|
+                    </p>
+                    <div class="md:block hidden">
+                        <ul class="navbar-top |  my-[10px] flex pjs-l textGray  max-w-[380px] duration-100">
+                            <li class="navbarBeranda  | text-black pjs-m |   xl:mr-[16px] mr-[10px] duration-100">
+                                <a href="#berandaPage">Beranda</a> </li>
+                            <li class="navbarArtikel |  xl:mx-[16px] mx-[10px] duration-100"><a
+                                    href="#articlePage">Artikel</a> </li>
+                            <li class="navbarPilihan  |   xl:mx-[16px] mx-[10px] w-[100px] duration-100">
+                                <a href="#pilihanEditorPage">Pilihan
+                                    Editor</a>
+                            </li>
+                            <li class="navbarPenulis  |   xl:ml[16px] ml-[10px] duration-100"><a
+                                    href="#penulisPage">Penulis</a> </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- other (login, language, search) -->
+                <div class="flex items-center">
+                    <div id="search-container"
+                        class="md:mr-0 mr-[5px] flex  items-center rounded-full borderGray bgGray transition-all duration-300 cursor-pointer">
+                        <!-- Pastikan lebar ikon tetap statis -->
+                        <i
+                            class="flex-shrink-0 sm:py-3 py-2  sm:w-[40px] w-[33px] text-center text-black/40 fa-solid fa-search fa-md textGray text-[16px]"></i>
+                        <input id="search-input" type="text" placeholder="Cari artikel budaya..."
+                            class="lg:w-[150px]  truncate w-0 duration-300 placeholder:text-sm placeholder:text-black/40 bg-transparent focus:outline-none">
+                    </div>
+
+                    <p class="md:block hidden pjs-l text-[20px] text-[#F0F0F0] xl:mx-[26px] mx-[20px] duration-100">|
+                    </p>
+                    <a
+                        class="hidden lg:block cursor-pointer items-center mr-3 |  py-3 px-5  rounded-full borderGray bg-[#DC4834] text-white hover:bg-transparent hover:text-black/70 duration-100">
+                        <p class=" text-md">Langanan</p>
+                    </a>
+                    <a
+                        class="hidden lg:block flex cursor-pointer items-center |  py-3  px-5  rounded-full borderGray  bgGray hover:bg-transparent hover:text-black/70 duration-100">
+                        <p class="text-md">Login</p>
+                    </a>
+                    <a
+                        class="md:ml-0 ml-[5px] lg:hidden block flex cursor-pointer items-center |  sm:py-3 py-2 sm:px-3.5 px-2.5 rounded-full borderGray  bgGray hover:bg-transparent hover:text-black/70 duration-100">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="md:hidden block pb-[10px]">
+                <ul class="navbar-top | my-[10px] flex pjs-l textGray duration-100 justify-between w-full ">
+                    <li class="navbarBeranda | text-black pjs-m |   xl:mr-[16px] mr-[10px] duration-100">
+                        <a href="#berandaPage">Beranda</a> </li>
+                    <li class="navbarArtikel  |  xl:mx-[16px] mx-[10px] duration-100"><a href="#articlePage">Artikel</a>
+                    </li>
+                    <li class="navbarPilihan  |   xl:mx-[16px] mx-[10px] w-[100px] duration-100"><a
+                            href="#pilihanEditorPage">Pilihan
+                            Editor</a>
+                    </li>
+                    <li class="navbarPenulis |   xl:ml[16px] ml-[10px] duration-100"><a href="#penulisPage">Penulis</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+    <div class="navbar-news  | sticky md:block hidden  bg-white left-0 w-full z-40  py-[10px] lg:top-20 top-[75px] ">
+        <nav class=" justify-center flex |">
+            <div class="flex items-center | rounded-lg py-[10px] px-[10px] bgGray w-[95%]">
+                <!-- logo - nav -->
+                <div class="w-[130px]  ">
+                    <p class="textRed text-[18px] pjs-m w-[130px]">Artikel terkini:</p>
+                </div>
+                <div class="marquee marqueee | flex | rounded-lg overflow-hidden whitespace-nowrap w-full">
+                    <span class="marquee-content |  text-black/80 pjs-l ">
+                        Kerajinan Tangan Indonesia: Dari Anyaman Bambu hingga Ukiran Kayu Jepara
+                        <span class="textRed text-xl mx-[12px]">•</span>
+                        Dari Film hingga Fashion: Sub-sektor Ekonomi Kreatif yang Mengharumkan Nama Indonesia
+                        <span class="textRed text-xl mx-[12px]">•</span>
+                        Puisi dan Prosa Lintas Generasi: Dinamika Bahasa dalam Karya Sastra Modern
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- content 1 big information -->
+    <container id="berandaPage" class="flex justify-center items-center | w-full pt-5">
+        <div class="w-[95%] flex lg:flex-row flex-col  items-center ">
+            <!-- big information -->
+            <div class="flex justify-end | relative w-full  ">
+
+                <div class="lg:w-[95%] w-full  sm:h-[620px] h-[550px] bg-black rounded-3xl overflow-hidden">
+                    <img class="object-cover object-ce w-full h-full"
+                        src="https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=2540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+
+                <div class="absolute flex justify-start  items-center |   h-full w-full">
+                    <div
+                        class="relative sm:w-[480px] w-full lg:h-[572px] sm:h-[620px] h-[550px] lg:mr-[20px] mr-0  bg-[#F5F5F5]/80 backdrop-blur-lg  rounded-r-3xl sm:rounded-r-lg lg:rounded-l-lg rounded-l-3xl    overflow-x-scroll">
+                        <div class="w-full flex justify-center   ">
+                            <div id="scrollMain"
+                                class="flex w-full h-full duration-500 ease-in-out transition-transform">
+                                <!-- 1 -->
+                                <div class="flex-col sm:w-[480px] w-full shrink-0 p-[24px] ">
+                                    <div class="pt-[36px] border-t border-black/5 pb-[36px] border-b ">
+                                        <!-- channel - ago  -->
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div
+                                                class="sm:w-[56px] w-[54px] sm:h-[56px] h-[54px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full" src="/img/lensV2.png"
+                                                    alt="img">
+                                            </div>
+                                            <div>
+                                                <h1
+                                                    class=" sm:text-[20px] text-[18px] textBlack truncate leading-[26px] pjs-m">
+                                                    Oggie
+                                                </h1>
+                                                <p class="sm:text-[16px] text-[14px] text-black/60 pjs-r">Penulis</p>
+                                            </div>
+                                            <p class="pjs-l text-[20px] text-black/10 px-[16px] ">|</p>
+                                            <div>
+                                                <p
+                                                    class="textGray  sm:text-[16px] text-[14px] leading-[20px] text-black/40 pjs-l">
+                                                    2
+                                                    jam
+                                                    yang lalu</p>
+                                                <p class="text-[12px] textRed pjs-r">Wisata</p>
+                                            </div>
+
+                                        </div>
+                                        <!-- title  -->
+                                        <div class="mt-[12px]">
+                                            <h1
+                                                class="sm:text-[44px] text-[38px] pjs-m line-clamp-4 sm:leading-[56px] leading-[50px] text-black">
+                                                Menyusuri Keindahan Alam Indonesia:<br> Surga Tropis di Setiap Sudut
+                                                Nusantara</h1>
+                                            <p
+                                                class="mt-[12px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-4  relative leading-[23px]">
+                                                Indonesia menawarkan keindahan alam yang luar biasa, dari pegunungan
+                                                hingga pantai tropis. Artikel ini mengeksplorasi destinasi wisata alam
+                                                <span class="flex"><span class="sm:block hidden ">mulai dari Gunung
+                                                        Bromo</span>...<span><a href="/src/html/detail.html?id=1"
+                                                            class="textRed hover:text-red-700 pjs-m block"> Baca
+                                                            selengkapnya</a></span></span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="flex-col sm:w-[480px] w-full shrink-0 p-[24px]">
+                                    <div class="pt-[36px] border-t border-black/5 pb-[36px] border-b">
+                                        <!-- channel - ago  -->
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div
+                                                class="sm:w-[56px] w-[54px] sm:h-[56px] h-[54px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full" src="/img/amar.png" alt="img">
+                                            </div>
+                                            <div>
+                                                <h1
+                                                    class=" sm:text-[20px] text-[18px] textBlack truncate leading-[26px] pjs-m">
+                                                    ammar
+                                                </h1>
+                                                <p class=" sm:text-[16px] text-[14px] text-black/60 pjs-r">Penulis</p>
+                                            </div>
+                                            <p class="pjs-l text-[20px] text-black/10 px-[16px] ">|</p>
+                                            <div>
+                                                <p
+                                                    class="textGray   sm:text-[16px] text-[14px] leading-[20px] text-black/40 pjs-l">
+                                                    2
+                                                    menit
+                                                    yang lalu</p>
+                                                <p class="text-[12px] textRed pjs-r">Kuliner</p>
+                                            </div>
+
+                                        </div>
+                                        <!-- title  -->
+                                        <div class="mt-[12px]">
+                                            <h1
+                                                class="sm:text-[44px] text-[38px] pjs-m line-clamp-4 leading-[56px] text-black">
+                                                Warisan Kuliner Nusantara: Rasa dan Tradisi yang Mengikat Generasi</h1>
+                                            <p
+                                                class="mt-[12px]  sm:text-[16px] text-[14px] pjs-l text-black/60  line-clamp-4 relative leading-[23px]">
+                                                Artikel ini mengulas kekayaan kuliner Indonesia yang diwariskan dari
+                                                generasi ke generasi. Setiap daerah di Nusantara memiliki hidangan khas
+                                                dengan rasa yang unik,
+                                                <span class="flex"><span class="sm:block hidden "> dipengaruhi oleh
+                                                        budaya </span>...<span><a href="/src/html/detail.html?id=4"
+                                                            class="textRed hover:text-red-700 pjs-m block"> Baca
+                                                            selengkapnya</a></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- button -->
+                        <div class="absolute flex justify-end  w-full  mt-5 bottom-6 right-6">
+                            <div class="flex justify-between w-[80px] ">
+                                <button id="sL-Main"
+                                    class="mr-[12px] rounded-full bg-black/10  text-black/80 duration-100 w-[32px] h-[32px] text-[12px]">
+                                    <i class=" fa-solid fa-angle-left"></i></button>
+                                <button id="sR-Main"
+                                    class="text-white  rounded-full bgRed  hover:bg-transparent hover:text-black duration-100 w-[32px] h-[32px] text-[12px]"><i
+                                        class=" fa-solid fa-angle-right  "></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- other information -->
+            <div class="otherInfog | lg:pl-[16px] pl-0 flex-col lg:mt-0 mt-[20px]">
+                <!-- card -->
+                <a href="/src/html/detail.html?id=2"
+                    class=" grid grid-cols-[132px_auto] w-auto  sm:mb-[20px] mb-[12px] items-center">
+
+                    <!-- img -->
+                    <div class="w-[132px] h-[132px] overflow-hidden rounded-xl">
+                        <img class="object-cover w-full h-full"
+                            src="https://i.pinimg.com/564x/17/7a/68/177a6899ddaaa3cabdd6de4350a531e7.jpg" alt="img">
+                    </div>
+                    <!-- content -->
+                    <div class="flex flex-col justify-between w-auto  sm:ml-[16px] ml-[12px] py-[3px]">
+                        <div>
+                            <!-- channel - ago -->
+                            <div class="flex items-center pjs-m">
+                                <div class="w-[28px] h-[28px] overflow-hidden rounded-full sm:mr-[12px] mr-[10px]">
+                                    <img class="object-cover" src="/img/azka.png" alt="img">
+                                </div>
+                                <h1 class=" sm:text-[18px] text-[14px] text-black pjs-r ">azka</h1>
+                                <p class="pjs-b text-[10px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                                <p class="sm:text-[14px] text-[12px] text-black/60 pjs-l">4 hari yang lalu</p>
+                            </div>
+                            <!-- text of news -->
+                            <h1
+                                class="sm:text-[24px] text-[20px] pjs-m line-clamp-2 text-black/80 sm:leading-[30px] mt-[6px] ">
+                                Wisata Budaya Indonesia: Menelusuri Jejak Tradisi dan Sejarah Nusantara
+                            </h1>
+                        </div>
+                        <div class=" flex  pjs-m text-center items-center mt-[8px]">
+                            <p class="textRed pjs-r sm:text-[14px] text-[12px] ">Wisata</p>
+                            <p class="pjs-b text-[8px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                            <p
+                                class="textBlack pjs-r text-black/80 sm:text-[14px] text-[12px] truncate md:w-auto w-[100px]">
+                                belum
+                                membaca</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- card -->
+                <a href="/src/html/detail.html?id=7"
+                    class=" grid grid-cols-[132px_auto] w-auto  sm:mb-[20px] mb-[12px] items-center">
+
+                    <!-- img -->
+                    <div class="w-[132px] h-[132px] overflow-hidden rounded-xl">
+                        <img class="object-cover w-full h-full"
+                            src="https://i.pinimg.com/564x/1d/e2/fa/1de2fa25c21fb53c0d609a8fa285a3ab.jpg" alt="img">
+                    </div>
+                    <!-- content -->
+                    <div class="flex flex-col justify-between   sm:ml-[16px] ml-[12px] py-[3px]">
+                        <div>
+                            <!-- channel - ago -->
+                            <div class="flex items-center pjs-m">
+                                <div class="w-[28px] h-[28px] overflow-hidden rounded-full sm:mr-[12px] mr-[10px]">
+                                    <img class="object-cover" src="/img/amar.png" alt="img">
+                                </div>
+                                <h1 class=" sm:text-[18px] text-[14px] text-black pjs-r truncate 2">ammar</h1>
+                                <p class="pjs-b text-[10px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                                <p class="sm:text-[14px] text-[12px] text-black/60 pjs-l">1 jam yang lalu</p>
+                            </div>
+                            <!-- text of news -->
+                            <h1
+                                class="sm:text-[24px] text-[20px] pjs-m line-clamp-2 text-black/80 sm:leading-[30px] mt-[6px]  ">
+                                Eksplorasi Batik Nusantara: Warna, Motif, dan Filosofi di Setiap Guratan
+                            </h1>
+                        </div>
+                        <div class=" flex  pjs-m text-center items-center mt-[8px]">
+                            <p class="textRed pjs-r sm:text-[14px] text-[12px] ">Seni & Kerajinan</p>
+                            <p class="pjs-b text-[8px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                            <p class="textBlack pjs-r text-black/80 sm:text-[14px] md:w-auto w-[100px] ">
+                                belum membaca</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- card -->
+                <a href="/src/html/detail.html?id=10"
+                    class=" grid grid-cols-[132px_auto] w-auto  sm:mb-[20px] mb-[12px] items-center">
+
+                    <!-- img -->
+                    <div class="w-[132px] h-[132px] overflow-hidden rounded-xl">
+                        <img class="object-cover w-full h-full"
+                            src="https://i.pinimg.com/564x/89/6d/e8/896de82d07b5cf78b203039e043f1c41.jpg" alt="img">
+                    </div>
+                    <!-- content -->
+                    <div class="flex flex-col justify-between   sm:ml-[16px] ml-[12px] py-[3px]">
+                        <div>
+                            <!-- channel - ago -->
+                            <div class="flex items-center pjs-m">
+                                <div class="w-[28px] h-[28px] overflow-hidden rounded-full sm:mr-[12px] mr-[10px]">
+                                    <img class="object-cover" src="/img/lensV2.png" alt="img">
+                                </div>
+                                <h1 class=" sm:text-[18px] text-[14px] text-black pjs-r truncate 2">Oggie</h1>
+                                <p class="pjs-b text-[10px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                                <p class="sm:text-[14px] text-[12px] text-black/60 pjs-l">1 jam yang lalu</p>
+                            </div>
+                            <!-- text of news -->
+                            <h1
+                                class="sm:text-[24px] text-[20px] pjs-m line-clamp-2 text-black/80 sm:leading-[30px] mt-[6px]  ">
+                                Ekonomi Kreatif Indonesia: Potensi Tak Terbatas di Era Digital
+                            </h1>
+                        </div>
+                        <div class=" flex  pjs-m text-center items-center mt-[8px]">
+                            <p class="textRed pjs-r sm:text-[14px] text-[12px] ">Ekonomi Kreatif</p>
+                            <p class="pjs-b text-[8px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                            <p class="textBlack pjs-r text-black/80 sm:text-[14px] md:w-auto w-[100px]">2
+                                menit membaca</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- card -->
+                <a href="/src/html/detail.html?id=13" class=" grid grid-cols-[132px_auto] w-auto items-center">
+
+                    <!-- img -->
+                    <div class="w-[132px] h-[132px] overflow-hidden rounded-xl">
+                        <img class="object-cover w-full h-full"
+                            src="https://i.pinimg.com/564x/4e/e8/14/4ee81419918e99fa81f858bec9db224f.jpg" alt="img">
+                    </div>
+                    <!-- content -->
+                    <div class="flex flex-col justify-between   sm:ml-[16px] ml-[12px] py-[3px]">
+                        <div>
+                            <!-- channel - ago -->
+                            <div class="flex items-center pjs-m">
+                                <div class="w-[28px] h-[28px] overflow-hidden rounded-full sm:mr-[12px] mr-[10px]">
+                                    <img class="object-cover" src="/img/azka.png" alt="img">
+                                </div>
+                                <h1 class=" sm:text-[18px] text-[14px] text-black pjs-r truncate 2">azka</h1>
+                                <p class="pjs-b text-[10px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                                <p class="sm:text-[14px] text-[12px] text-black/60 pjs-l">1 jam yang lalu</p>
+                            </div>
+                            <!-- text of news -->
+                            <h1
+                                class="sm:text-[24px] text-[20px] pjs-m line-clamp-2 text-black/80 sm:leading-[30px] mt-[6px]  ">
+                                Bahasa Nusantara: Kekayaan Linguistik yang Menjaga Identitas Bangsa
+                            </h1>
+                        </div>
+                        <div class=" flex  pjs-m text-center items-center mt-[8px]">
+                            <p class="textRed pjs-r sm:text-[14px] text-[12px] md:w-auto w-[100px]">Bahasa & Sastra</p>
+                            <p class="pjs-b text-[8px] text-black/10 sm:mx-[12px] mx-[10px]">|</p>
+                            <p class="textBlack pjs-r text-black/80 sm:text-[14px] md:w-auto w-[100px] ">
+                                belum membaca</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </container>
+    <!-- geser kebawah -->
+    <container class="flex justify-center items-center | w-full  mt-[24px]">
+        <div class="w-[95%] flex items-center justify-center py-[8px]  border-t border-b border-black/5">
+            <div class="">
+                <div class="flex justify-center">
+                    <img class="w-[22px]" src="/img/mouse.png" alt="img">
+                </div>
+
+                <p class="text-black/20 pjs-m text-[16px]">Geser kebawah</p>
+            </div>
+
+        </div>
+
+    </container>
+
+    <!-- article -->
+    <container id="articlePage" class="flex justify-center  items-center | w-full  mt-[72px]">
+        <div class="w-[95%]">
+            <!-- navbar -->
+            <div>
+                <div class="text-left  border-b border-black/5 w-full pb-[12px]">
+                    <h1 class="pjs-m sm:text-[36px] text-[34px] text-[#212121] leading-[46px]">Artikel</h1>
+                    <div class="flex md:flex-row flex-col justify-between items-start">
+                        <p class="text-black/60 leading-[26px] pjs-l flex  mr-[20px] sm:text-[16px] text-[14px]"><span
+                                class="textRed text-xl mr-[12px] md:block hidden">•</span>
+                            Temukan berbagai artikel dan berita menarik mulai dari wisata alam indah hingga
+                            budaya-budaya
+                            yang cantik!</p>
+                        <a href="#"
+                            class=" lg:hidden block pjs-m  w-[200px] textRed hover:text-red-700 sm:text-[16px] text-[14px] duration-75 md:ml-4 ml-0 min-w-[130px] sm:mt-0 mt-[10px] ">Lihat
+                            Semua
+                            <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+                    </div>
+                </div>
+                <div class="w-full mt-[24px] flex items-center justify-between">
+                    <div class="flex items-center w-full">
+                        <div>
+                            <button data-target="terkini" id="articleTerkini"
+                                class="rounded-full borderGray bgRed text-white box-button hover:bg-black/5 hover:text-black/40 pjs-m duration-75">
+                                <p class="py-[8px] px-[16px] text-[12px]">Terkini</p>
+                            </button>
+                        </div>
+                        <p class="pjs-l text-[20px] text-black/10 mx-[16px]">|</p>
+                        <div class="overflow-x-scroll ">
+                            <ul class="navbar-budaya flex flex-wrap pjs-r w-max">
+                                <li id="articleWisata" data-target="wisata"
+                                    class="h-[35px] flex items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 w-auto px-[12px]">
+                                    Wisata
+                                </li>
+                                <li id="articleKuliner" data-target="kuliner"
+                                    class="h-[35px] flex items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 w-auto px-[12px]">
+                                    Kuliner
+                                </li>
+                                <li id="articleSeni" data-target="kerajinan"
+                                    class="h-[35px] sm:w-[125px] w-auto justify-center flex items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 px-[12px]">
+                                    Seni & Kerajinan
+                                </li>
+                                <li id="articleEkonomi" data-target="ekonomi"
+                                    class="h-[35px] sm:w-[130px] w-auto justify-center flex items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 px-[12px]">
+                                    Ekonomi Kreatif
+                                </li>
+                                <li id="articleBahasa" data-target="bahasa"
+                                    class="h-[35px] sm:w-[130px] w-auto flex justify-center items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 px-[12px]">
+                                    Bahasa & Sastra
+                                </li>
+                                <li id="articleAcara" data-target="acara"
+                                    class="h-[35px] sm:w-[130px] w-auto flex justify-center items-center borderGray box-button hover:bg-black/5 hover:text-black/80 duration-75 text-black/80 px-[12px]">
+                                    Acara & Festival
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="lg:block hidden pjs-m textRed hover:text-red-700 text-[16px] duration-75 min-w-[130px]">Lihat
+                        Semua <span><i class="px-3 fa-solid fa-angle-right"></i></span></a>
+                </div>
+
+            </div>
+            <!-- content -->
+            <div class="overflow-x-scroll rounded-xl mt-[24px]">
+                <div id="scrollArticle"
+                    class="flex items-start 2xl:justify-center justify-start   duration-500 w-full h-full ease-in-out transition-transform ">
+
+                </div>
+            </div>
+
+        </div>
+    </container>
+    <!-- Button -->
+    <container id="btn-article" class="flex justify-center items-center | w-full  mt-[24px]">
+        <div class="w-[95%] relative flex items-center justify-center py-[36px]  border-t border-b border-black/5">
+
+            <!-- dots -->
+            <div class="flex ">
+                <div id="dot1Article" class="w-[24px] h-[8px] bgRed rounded-full mx-[2px] duration-100"> </div>
+            </div>
+        </div>
+    </container>
+
+    <!-- pilihan editor area -->
+    <container id="pilihanEditorPage" class="flex justify-center items-center | xl:static relative  w-full  mt-[72px]">
+            <div class="w-[95%]" >
+                <div class="text-left border-b border-black/5 w-full pb-[12px] ">
+                    <h1 class="pjs-m sm:text-[36px] text-[34px] text-[#212121] leading-[46px]">Pilihan Editor</h1>
+                    <div class="flex sm:flex-row flex-col items-start justify-between">
+                        <p class="text-black/60 leading-[26px] pjs-l sm:text-[16px] text-[14px] flex"><span
+                                class="textRed text-xl md:block hidden mr-[12px]">•</span>
+                            Artikel terbaik bulan ini...</p>
+                        <a href="#"
+                            class="sm:mt-0 mt-[10px] pjs-m textRed hover:text-red-700 sm:text-[16px] duration-7 text-[14px]">Lihat
+                            Semua <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col xl:flex-row items-center justify-center mt-[24px]">
+                    <!-- card -->
+                    <div class="max-w-[360px] xl:block hidden">
+                        <div class="overflow-hidden">
+                            <div id="containerLeft-pi"
+                                class="duration-500 w-full h-full flex flex-row-reverse justify-start items-start  rounded-xl ">
+                                <!-- content -->
+                                <a href="/src/html/detail.html?id=16" class="w-[360px] ">
+                                    <div class="w-[360px] sm:h-[332px] h-[300px] overflow-hidden rounded-xl">
+                                        <img class="object-cover w-full h-full"
+                                            src="https://i.pinimg.com/736x/2d/4a/35/2d4a35a0a95ff4d632d69be7728cf2fb.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="mt-[12px]">
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full"
+                                                    src="https://awsimages.detik.net.id/community/media/visual/2024/02/06/sweet-home-3-2026_11.jpeg?w=500&q=90"
+                                                    alt="img">
+                                            </div>
+                                            <h1 class=" text-[24px] pjs-r text-black">Cha Hyun So</h1>
+                                            <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px] text-black/40 pjs-r">1 jam yang lalu</p>
+                                        </div>
+                                        <h1
+                                            class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                            Festival Budaya Nusantara: Merayakan Keberagaman Melalui Seni dan Tradisi
+                                        </h1>
+                                        <p
+                                            class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                            Festival budaya di Indonesia adalah cara yang luar biasa untuk merayakan
+                                            keberagaman
+                                            suku, adat, dan tradisi di Nusantara. Artikel ini mengulas beberapa festival
+                                            budaya
+                                            terkenal, seperti Festival Danau Toba, Festival Lembah Baliem, dan Jember
+                                            Fashion
+                                            Carnaval. Setiap festival menampilkan keindahan seni tari, musik, serta
+                                            kerajinan
+                                            khas daerah, sekaligus menjadi ajang pelestarian budaya yang mendekatkan
+                                            masyarakat
+                                            pada akar tradisi mereka.
+                                        </p>
+                                        <div class="flex items-center">
+                                            <h1 class=" text-[16px] textRed">Acara & Festival</h1>
+                                            <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px]  textBlack pjs-r">belum membaca</p>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                                <!-- content -->
+                                <a href="/src/html/detail.html?id=17" class="w-[360px] mr-[20px]">
+                                    <div class="w-[360px] h-[332px] overflow-hidden rounded-xl">
+                                        <img class="object-cover w-full h-full"
+                                            src="https://i.pinimg.com/564x/ae/cc/74/aecc744a94b5f5af736b97376970827a.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="mt-[12px]">
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full"
+                                                    src="https://static0.srcdn.com/wordpress/wp-content/uploads/2023/11/sweet-home-season-one-eun-hyeok-headphones.jpg"
+                                                    alt="img">
+                                            </div>
+                                            <h1 class=" text-[24px] pjs-r text-black">Lee Eun-hyuk</h1>
+                                            <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px] text-black/40 pjs-r">1 jam yang lalu</p>
+                                        </div>
+                                        <h1
+                                            class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                            Karnaval Nusantara: Pesta Rakyat yang Menghidupkan Warna-warni Tradisi</h1>
+                                        <p
+                                            class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                            Indonesia kaya akan karnaval-karnaval yang memamerkan seni dan budaya lokal,
+                                            mulai
+                                            dari Karnaval Batik Solo hingga Karnaval Karawo di Gorontalo. Artikel ini
+                                            membahas
+                                            bagaimana acara-acara karnaval menjadi platform untuk menampilkan
+                                            kreativitas
+                                            dalam
+                                            busana, tarian, dan seni rupa, serta menjadi daya tarik wisata yang menarik
+                                            perhatian internasional. Karnaval ini tidak hanya hiburan, tetapi juga
+                                            cerminan
+                                            identitas budaya yang penuh warna dan semangat kebersamaan.
+                                        </p>
+                                        <div class="flex items-center">
+                                            <h1 class=" text-[16px] textRed">Acara & Festival</h1>
+                                            <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px]  textBlack pjs-r">belum membaca</p>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- midle card 600-->
+                    <div class="relative  w-full xl:h-[600px] h-[400px] overflow-hidden rounded-xl mx-[20px]">
+                        <img id="imgC" class="object-cover w-full h-full"
+                            src="https://i.pinimg.com/564x/37/ed/3b/37ed3b1d8a1dcb6bd85839ae7bcff142.jpg" alt="img">
+                        <div
+                            class="absolute flex justify-start items-end w-full h-full top-0 bg-gradient-to-b sm:from-black/20 from-black/40 to-black/80 sm:to-black/80 ">
+                            <div class="m-[24px] w-[418px]">
+                                <!-- channel - ago  -->
+                                <div class="flex items-center pjs-m w-full">
+                                    <div
+                                        class="sm:w-[56px] w-[54px] sm:h-[56px] h-[54px] overflow-hidden rounded-full mr-[12px]">
+                                        <img id="pfpC" class="object-cover  w-full h-full"
+                                            src="https://i.pinimg.com/736x/47/8a/89/478a89cdd089bee40a85842323d16199.jpg"
+                                            alt="img">
+                                    </div>
+                                    <div class="pjs-r">
+                                        <h1 id="nameC"
+                                            class=" sm:text-[20px] text-[18px] text-white truncate leading-[26px] ">Seo
+                                            ah-yi
+                                        </h1>
+                                        <p class="sm:text-[16px] text-[14px] text-white/60 ">Penulis</p>
+                                    </div>
+                                    <p class="pjs-l text-[20px] text-white/20 px-[16px] ">|</p>
+                                    <div class="pjs-l ">
+                                        <p id="agoC"
+                                            class="textGray  sm:text-[16px] text-[14px] leading-[20px] text-white/40">10
+                                            hari yang
+                                            lalu</p>
+                                        <p id="typeC" class="text-[14px] textRed pjs-m">Seni & Kerajinan</p>
+                                    </div>
+
+                                </div>
+                                <!-- title  -->
+                                <div class="mt-[12px]">
+                                    <h1 id="titleC"
+                                        class="sm:text-[32px] text-[30px] pjs-m line-clamp-3 leading-[40px] text-white">
+                                        Kerajinan Tangan Indonesia: Dari Anyaman Bambu hingga Ukiran Kayu Jepara</h1>
+                                    <p id="descC"
+                                        class="mt-[12px] sm:text-[16px] text-[14px] pjs-l text-white/60  line-clamp-4 relative leading-[23px]">
+                                        Indonesia kaya akan kerajinan tangan yang mencerminkan keahlian dan kreativitas
+                                        masyarakat lokal. Artikel ini membahas beragam kerajinan tradisional...<a
+                                            href="/src/html/detail.html?id=9"
+                                            class="textRed hover:text-red-700 pjs-m duration-75">
+                                            Baca selengkapnya</a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- card -->
+                    <div class="max-w-[360px] xl:block hidden">
+                        <div class=" overflow-hidden ">
+                            <div id="containerRight-pi"
+                                class="duration-500 w-full h-full flex  justify-start items-start  rounded-xl ">
+                                <!-- content -->
+                                <a href="/src/html/detail.html?id=14" class="w-[360px] mr-[20px] ">
+                                    <div class="w-[360px] h-[332px] overflow-hidden rounded-xl">
+                                        <img class="object-cover w-full h-full"
+                                            src="https://i.pinimg.com/564x/0d/5d/1f/0d5d1f302c87ec8f3ac6626e44a7e82f.jpg"
+                                            alt="img">
+                                    </div>
+                                    <div class="mt-[12px]">
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full" src="/img/amar.png" alt="img">
+                                            </div>
+                                            <h1 class=" text-[24px] pjs-r text-black">ammar</h1>
+                                            <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px] text-black/40 pjs-r">1 hari yang lalu</p>
+                                        </div>
+                                        <h1
+                                            class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                            Sastra
+                                            Indonesia: Jejak Karya yang Membentuk Wacana Sosial dan Budaya</h1>
+                                        <p
+                                            class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                            Sastra Indonesia telah melahirkan banyak karya besar yang tak hanya
+                                            berfungsi
+                                            sebagai hiburan, tetapi juga refleksi atas keadaan sosial dan budaya di
+                                            setiap
+                                            zamannya. Artikel ini menyoroti evolusi sastra Indonesia, mulai dari
+                                            puisi-puisi
+                                            Chairil Anwar hingga novel-novel kontemporer seperti karya Eka Kurniawan.
+                                            Karya
+                                            sastra ini menggambarkan pergeseran pandangan hidup masyarakat, nilai-nilai
+                                            sosial,
+                                            serta perjuangan identitas di era modern.
+                                        </p>
+                                        <div class="flex items-center">
+                                            <h1 class=" text-[16px] textRed">Bahasa & Sastra</h1>
+                                            <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px]  textBlack pjs-r">belum membaca</p>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                                <!-- content -->
+                                <a href="/src/html/detail.html?id=12" class="w-[360px] ">
+                                    <div class="w-[360px] h-[332px] overflow-hidden rounded-xl">
+                                        <img class="object-cover w-full h-full"
+                                            src="https://i.pinimg.com/564x/96/3d/86/963d86ac58e19ad7e659ef4dc0847466.jpg"
+                                            alt="img">
+                                    </div>
+                                    <div class="mt-[12px]">
+                                        <div class="flex items-center pjs-m w-full">
+                                            <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                                <img class="object-cover  w-full h-full"
+                                                    src="https://i.pinimg.com/736x/0f/78/2f/0f782f57cf87f3b54535319a81ced227.jpg"
+                                                    alt="img">
+                                            </div>
+                                            <h1 class=" text-[24px] pjs-r text-black">Lee Eun-yu</h1>
+                                            <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px] text-black/40 pjs-r">1 jam yang lalu</p>
+                                        </div>
+                                        <h1
+                                            class="my-[8px] text-[28px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                            Dari
+                                            Film hingga Fashion: Sub-sektor Ekonomi Kreatif yang Mengharumkan Nama
+                                            Indonesia
+                                        </h1>
+                                        <p
+                                            class="mb-[12px] text-[16px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                            Indonesia memiliki banyak sub-sektor ekonomi kreatif yang bersinar di
+                                            panggung
+                                            internasional, mulai dari industri film, musik, hingga fashion. Artikel ini
+                                            membahas
+                                            kisah sukses beberapa pelaku industri kreatif Indonesia yang berhasil
+                                            mencuri
+                                            perhatian dunia. Dari desainer muda hingga sutradara film independen, mereka
+                                            menunjukkan bahwa kreatifitas Indonesia mampu bersaing dan diterima oleh
+                                            pasar
+                                            global.
+                                        </p>
+                                        <div class="flex items-center">
+                                            <h1 class=" text-[16px] textRed">Ekonomi Kreatif</h1>
+                                            <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                            <p class="textGray  text-[16px]  textBlack pjs-r">2 menit membaca</p>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-scroll rounded-xl w-full xl:hidden block mt-[20px]">
+                        <div
+                            class="flex items-start justify-start   duration-500 w-full h-full ease-in-out transition-transform ">
+                            <a href="/src/html/detail.html?id=16"
+                                class="sm:sm:w-[440px]  w-[370px] mr-[20px] cursor-pointer">
+                                <div class="sm:w-[440px] w-[370px] sm:h-[332px] h-[300px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/736x/2d/4a/35/2d4a35a0a95ff4d632d69be7728cf2fb.jpg"
+                                        alt="">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full"
+                                                src="https://awsimages.detik.net.id/community/media/visual/2024/02/06/sweet-home-3-2026_11.jpeg?w=500&q=90"
+                                                alt="img">
+                                        </div>
+                                        <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Cha Hyun So</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  sm:text-[16px] text-[14px] text-black/40 pjs-r">1 jam yang
+                                            lalu
+                                        </p>
+                                    </div>
+                                    <h1
+                                        class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Festival Budaya Nusantara: Merayakan Keberagaman Melalui Seni dan Tradisi</h1>
+                                    <p
+                                        class="mb-[12px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Festival budaya di Indonesia adalah cara yang luar biasa untuk merayakan
+                                        keberagaman
+                                        suku, adat, dan tradisi di Nusantara. Artikel ini mengulas beberapa festival
+                                        budaya
+                                        terkenal, seperti Festival Danau Toba, Festival Lembah Baliem, dan Jember
+                                        Fashion
+                                        Carnaval. Setiap festival menampilkan keindahan seni tari, musik, serta
+                                        kerajinan
+                                        khas daerah, sekaligus menjadi ajang pelestarian budaya yang mendekatkan
+                                        masyarakat
+                                        pada akar tradisi mereka.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class=" sm:text-[16px] text-[14px] textRed">Acara & Festival</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  sm:text-[16px]  text-[14px] textBlack pjs-r">belum membaca
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+                            <a href="/src/html/detail.html?id=17"
+                                class="sm:w-[440px] w-[370px] mr-[20px] cursor-pointer">
+                                <div class="sm:w-[440px] w-[370px] sm:h-[332px] h-[300px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/564x/ae/cc/74/aecc744a94b5f5af736b97376970827a.jpg"
+                                        alt="">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full"
+                                                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2023/11/sweet-home-season-one-eun-hyeok-headphones.jpg"
+                                                alt="img">
+                                        </div>
+                                        <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Lee Eun-hyuk</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  sm:text-[16px] text-[14px] text-black/40 pjs-r">1 jam yang
+                                            lalu
+                                        </p>
+                                    </div>
+                                    <h1
+                                        class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Karnaval Nusantara: Pesta Rakyat yang Menghidupkan Warna-warni Tradisi</h1>
+                                    <p
+                                        class="mb-[12px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Indonesia kaya akan karnaval-karnaval yang memamerkan seni dan budaya lokal,
+                                        mulai
+                                        dari Karnaval Batik Solo hingga Karnaval Karawo di Gorontalo. Artikel ini
+                                        membahas
+                                        bagaimana acara-acara karnaval menjadi platform untuk menampilkan kreativitas
+                                        dalam
+                                        busana, tarian, dan seni rupa, serta menjadi daya tarik wisata yang menarik
+                                        perhatian internasional. Karnaval ini tidak hanya hiburan, tetapi juga cerminan
+                                        identitas budaya yang penuh warna dan semangat kebersamaan.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class="  sm:text-[16px] text-[14px] textRed">Acara & Festival</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="ttextGray  sm:text-[16px]  text-[14px] textBlack pjs-r">belum membaca
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+                            <a href="/src/html/detail.html?id=14"
+                                class="sm:w-[440px] w-[370px] mr-[20px] cursor-pointer ">
+                                <div class="sm:w-[440px] w-[370px] sm:h-[332px] h-[300px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/564x/0d/5d/1f/0d5d1f302c87ec8f3ac6626e44a7e82f.jpg"
+                                        alt="img">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full" src="/img/amar.png" alt="img">
+                                        </div>
+                                        <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">ammar</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  sm:text-[16px] text-[14px] text-black/40 pjs-r">1 hari yang
+                                            lalu
+                                        </p>
+                                    </div>
+                                    <h1
+                                        class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Sastra
+                                        Indonesia: Jejak Karya yang Membentuk Wacana Sosial dan Budaya</h1>
+                                    <p
+                                        class="mb-[12px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Sastra Indonesia telah melahirkan banyak karya besar yang tak hanya berfungsi
+                                        sebagai hiburan, tetapi juga refleksi atas keadaan sosial dan budaya di setiap
+                                        zamannya. Artikel ini menyoroti evolusi sastra Indonesia, mulai dari puisi-puisi
+                                        Chairil Anwar hingga novel-novel kontemporer seperti karya Eka Kurniawan. Karya
+                                        sastra ini menggambarkan pergeseran pandangan hidup masyarakat, nilai-nilai
+                                        sosial,
+                                        serta perjuangan identitas di era modern.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class="  sm:text-[16px] text-[14px] textRed">Bahasa & Sastra</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="ttextGray  sm:text-[16px]  text-[14px] textBlack pjs-r">belum membaca
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+                            <a href="/src/html/detail.html?id=12" class="sm:w-[440px] w-[370px] cursor-pointer">
+                                <div class="sm:w-[440px] w-[370px] sm:h-[332px] h-[300px] overflow-hidden rounded-xl">
+                                    <img class="object-cover w-full h-full"
+                                        src="https://i.pinimg.com/564x/96/3d/86/963d86ac58e19ad7e659ef4dc0847466.jpg"
+                                        alt="img">
+                                </div>
+                                <div class="mt-[12px]">
+                                    <div class="flex items-center pjs-m w-full">
+                                        <div class="w-[40px] h-[40px]  overflow-hidden rounded-full mr-[12px]">
+                                            <img class="object-cover  w-full h-full"
+                                                src="https://i.pinimg.com/736x/0f/78/2f/0f782f57cf87f3b54535319a81ced227.jpg"
+                                                alt="img">
+                                        </div>
+                                        <h1 class=" sm:text-[24px] text-[20px] pjs-r text-black">Lee Eun-yu</h1>
+                                        <p class="pjs-l text-[16px] text-black/10 px-[12px] ">|</p>
+                                        <p class="textGray  sm:text-[16px] text-[14px] text-black/40 pjs-r">1 jam yang
+                                            lalu
+                                        </p>
+                                    </div>
+                                    <h1
+                                        class="my-[8px] sm:text-[28px] text-[24px] pjs-m line-clamp-2 leading-[36px] text-black/80">
+                                        Dari
+                                        Film hingga Fashion: Sub-sektor Ekonomi Kreatif yang Mengharumkan Nama Indonesia
+                                    </h1>
+                                    <p
+                                        class="mb-[12px] sm:text-[16px] text-[14px] pjs-l text-black/60 line-clamp-3  leading-[23px]">
+                                        Indonesia memiliki banyak sub-sektor ekonomi kreatif yang bersinar di panggung
+                                        internasional, mulai dari industri film, musik, hingga fashion. Artikel ini
+                                        membahas
+                                        kisah sukses beberapa pelaku industri kreatif Indonesia yang berhasil mencuri
+                                        perhatian dunia. Dari desainer muda hingga sutradara film independen, mereka
+                                        menunjukkan bahwa kreatifitas Indonesia mampu bersaing dan diterima oleh pasar
+                                        global.
+                                    </p>
+                                    <div class="flex items-center">
+                                        <h1 class="  sm:text-[16px] text-[14px] textRed">Ekonomi Kreatif</h1>
+                                        <p class="pjs-l text-[12px] text-black/10 px-[12px] ">|</p>
+                                        <p class="ttextGray  sm:text-[16px]  text-[14px] textBlack pjs-r">2 menit
+                                            membaca
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+        </div>
+    </container>
+     <!-- Button -->
+    <container class="flex justify-center items-center | w-full  mt-[24px]">
+        <div
+            class="w-[95%] relative flex items-center justify-center py-[36px]  border-t border-b border-black/5">
+
+            <!-- dots -->
+            <div class="flex ">
+                <div id="dot1Pilihan" class="w-[24px] h-[8px] bgRed rounded-full mx-[2px] duration-100"> </div>
+                <div id="dot2Pilihan" class="xl:block hidden w-[12px] h-[8px] bg-black/10 rounded-full mx-[2px] duration-100">
+                </div>
+            </div>
+
+            <!-- button right / left -->
+            <div class="absolute w-full h-full flex justify-end items-center  ">
+                <div class="xl:block hidden flex">
+                    <button id="sL-Pi"
+                        class=" mr-[12px] rounded-full bg-black/10  text-black/80 duration-75 w-[32px] h-[32px] text-[12px]">
+                        <i class=" fa-solid fa-angle-left"></i></button>
+                    <button id="sR-Pi"
+                        class=" text-white  rounded-full bgRed  hover:bg-transparent hover:text-black duration-75 w-[32px] h-[32px] text-[12px]"><i
+                            class=" fa-solid fa-angle-right  "></i></button>
+                </div>
+            </div>
+        </div>
+    </container>
+
+    <!-- Penulis area -->
+    <container id="penulisPage" class="flex justify-center items-center | w-full  mt-[72px]">
+        <div class="w-[95%]">
+            <!-- judul heading -->
+            <div class="text-left border-b border-black/5 w-full pb-[12px]">
+                <h1 class="pjs-m sm:text-[36px] text-[34px] text-[#212121] leading-[46px]">Penulis</h1>
+                <div class="flex md:flex-row flex-col items-start justify-between">
+                    <p class="text-black/60 leading-[26px] pjs-l flex sm:text-[16px] text-[14px]"><span
+                            class="textRed text-xl md:block hidden  mr-[12px]">•</span>
+                        Penulis terbaik bulan ini...</p>
+                    <a href="#"
+                        class="sm:mt-0 mt-[10px] pjs-m textRed hover:text-red-700 sm:text-[16px] text-[14px] duration-75  md:ml-4 ml-0 min-w-[130px]">Lihat
+                        Semua <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+                </div>
+            </div>
+            <div class="mt-[24px] overflow-x-scroll w-full">
+                <div id="scrollPenulis"
+                    class="duration-500 flex items-start w-max h-full ease-in-out transition-transform ">
+
+                    <div class="flex w-full ">
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full" src="/img/oggie.png" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Oggie</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full" src="/img/amar.png" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Amnar Izzudin</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full" src="/img/azka.png" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">azka</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full"
+                                src="https://i.pinimg.com/736x/47/8a/89/478a89cdd089bee40a85842323d16199.jpg" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Seo ah-yi</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75 ">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex w-full">
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full"
+                                src="https://static0.srcdn.com/wordpress/wp-content/uploads/2023/11/sweet-home-season-one-eun-hyeok-headphones.jpg"
+                                alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Lee Eun-hyuk</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75 ">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full"
+                                src="https://i.pinimg.com/736x/0f/78/2f/0f782f57cf87f3b54535319a81ced227.jpg" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Lee Eun-yu</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75 ">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl mr-[20px]">
+                            <img class="object-cover w-full h-full"
+                                src="https://awsimages.detik.net.id/community/media/visual/2024/02/06/sweet-home-3-2026_11.jpeg?w=500&q=90"
+                                alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Cha Hyun So</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75 ">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- card -->
+                        <div class="relative sm:w-[325px] w-[250px]  h-[500px] overflow-hidden rounded-xl ">
+                            <img class="object-cover w-full h-full"
+                                src="https://asianwiki.com/images/3/32/Sweet_Home_3-Choi-Go.jpg" alt="img">
+                            <div
+                                class="top-0 absolute flex justify-start items-end w-full h-full bg-gradient-to-b from-black/20 to-black/50">
+                                <div class="m-[24px] w-full">
+                                    <h1 class="sm:text-[24px] text-[22px] pjs-r text-white/80">Choi Go</h1>
+                                    <div class="flex justify-between items-center">
+                                        <p class="text-white/60 sm:text-[16px] text-[14px] pjs-r">Penulis</p>
+                                        <a href="#"
+                                            class="pjs-l text-white hover:text-white/70 sm:text-[16px] text-[14px] duration-75 ">Social
+                                            media <span><i class="px-3 | fa-solid fa-angle-right "></i></span></a>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </container>
+    <!-- Button -->
+    <container class="flex justify-center items-center | w-full  mt-[24px]">
+        <div class="w-[95%] relative flex items-center justify-center py-[36px]  border-t border-b border-black/5">
+
+            <!-- dots -->
+            <div class="flex ">
+                <div id="dot1Penulis" class="w-[24px] h-[8px] bgRed rounded-full mx-[2px] duration-100"> </div>
+                <div id="dot2Penulis" class="lg:block hidden w-[12px] h-[8px] bg-black/10 rounded-full mx-[2px] duration-100"> </div>
+
+            </div>
+
+            <!-- button right / left -->
+            <div class="absolute w-full h-full flex justify-end items-center  ">
+                <div class="lg:block hidden">
+                    <button id="sL-Penulis"
+                        class="mr-[12px] rounded-full bg-black/10  text-black/80 duration-75 w-[32px] h-[32px] text-[12px]">
+                        <i class=" fa-solid fa-angle-left"></i></button>
+                    <button id="sR-Penulis"
+                        class="text-white  rounded-full bgRed  hover:bg-transparent hover:text-black duration-75 w-[32px] h-[32px] text-[12px]"><i
+                            class=" fa-solid fa-angle-right  "></i></button>
+                </div>
+
+            </div>
+        </div>
+    </container>
+
+    <!-- footer & backScroll -->
+    <footer class="w-full sm:px-[40px] px-[20px] bgGray mt-[72px] pt-[72px]">
+
+        <!-- bagian 1 -->
+        <div class="flex lg:flex-row flex-col justify-between">
+            <!-- kiri -->
+            <div class="text-left lg:w-[576px] w-full mr-[20px]">
+                <div class="flex  items-center  cursor-pointer">
+                    <img src="/img/logo.png" class="w-[30px] h-[30px]" alt="">
+                    <h1 class="titleLogo | pjs-eb ml-1">Molokal</h1>
+                </div>
+                <p class="sm:text-[18px] text-[16px] pjs-l text-black/80 leading-[18px] mt-[12px]">Situs yang selalu
+                    membawa berita
+                    terbaru perihal budaya Indonesia.</p>
+                <h1 class="pjs-m sm:text-[36px] text-[28px] textBlack mt-[32px] sm:leading-[45px] leading-9">Ingin
+                    mendapatkan update berita
+                    lebih awal? Langganan sekarang!</h1>
+                <p class="pjs-l mt-[12px] sm:text-[16px] text-[14px] text-black/60">Masukan email mu untuk mulai
+                    berlangganan dengan Molokal...</p>
+                <hr class="sm:w-[370px] w-full mt-[24px] border-black/5">
+
+                <div class="flex py-[24px] items-center justify-start w-full ">
+                    <div class="flex items-center | py-3 pr-5  rounded-full borderGray bg-[#EBEBEB]">
+                        <span class="w-full flex justify-center items-center text-center text-black/40">
+                            <i class=" fa-regular fa-envelope fa-md textGray sm:text-[16px] text-[14px]"></i>
+                        </span>
+                        <input type="text" placeholder="Masukan email mu disini..."
+                            class=" sm:w-[220px] w-[200px] placeholder:text-sm placeholder:text-black/40 | bg-transparent focus:outline-none ">
+                    </div>
+                    <a
+                        class=" cursor-pointer items-center sm:ml-[16px] ml-[10px]  |  py-3 px-5  rounded-full borderGray hover:border-black/5 bgRed hover:bg-transparent text-white hover:text-black/70 duration-100">
+                        <p class=" text-md  sm:text-[16px] text-[14px]">Kirim</p>
+                    </a>
+                </div>
+
+            </div>
+            <!-- kanan -->
+            <div class="flex mt-[50px]">
+
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 mr-[52px]">
+                    <span class="pjs-m text-black ">Navigasi</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Berita
+                            terkini</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a
+                            href="#articlePage">Artikel</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a
+                            href="#pilihanEditorPage">Pilihan Editor</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="#penulisPage">Penulis</a>
+                    </li>
+                </ul>
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 mr-[52px]">
+                    <span class="pjs-m text-black">Perusahaan</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Tentang kami</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Karir</a> </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Media</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="">Kontak</a> </li>
+                </ul>
+                <ul class="sm:text-[18px] text-[16px] pjs-l text-black/60 ">
+                    <span class="pjs-m text-black">Sosial Media</span>
+                    <li class="my-[16px] hover:text-black hover:underline decoration-solid"><a href="">Instagram</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Facebook</a>
+                    </li>
+                    <li class="mb-[16px] hover:text-black hover:underline decoration-solid"><a href="">Youtube</a> </li>
+                    <li class="hover:text-black hover:underline decoration-solid"><a href="">x</a> </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- bagian 2 -->
+
+
+        <!-- bagian 3 -->
+        <div
+            class="flex lg:flex-row flex-col lg:justify-between justify-start py-[24px] border-t border-b lg:mt-0 mt-[40px] border-black/5">
+            <p class="text-black sm:text-[16px] text-[14px]  pjs-l">©Molokal 2024. All rights reserved.</p>
+            <div>
+                <ul class="sm:flex flex-wrap textBlack items-center sm:text-[16px] text-[14px] lg:mt-0 mt-[10px]">
+                    <li class="hover:underline decoration-solid">Ketentuan Layanan <span
+                            class="pjs-l text-[12px] text-black/10  mx-[36px]">|</span></li>
+
+                    <li class="hover:underline decoration-solid">Layanan Kebijakan <span
+                            class="pjs-l text-[12px] text-black/10  mx-[36px]">|</span></li>
+
+                    <li class="hover:underline decoration-solid">#banggabuatanindonesia🇮🇩 </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- bagian 4 (mouse scroll) -->
+        <div class="flex justify-center items-center py-[44px]">
+            <a href="#berandaPage" class="cursor-pointer">
+                <div class="flex justify-center">
+                    <img class="w-[22px]" src="/img/mouse.png" alt="img">
+                </div>
+
+                <p class="text-black/20 pjs-m sm:text-[16px] text-[14px]">Kembali keatas</p>
+            </a>
+
+        </div>
+    </footer>
+
+    <script>
+        // searching bar  ===============================================
+        const searchContainer = document.getElementById('search-container');
+        const searchInput = document.getElementById('search-input');
+
+
+        searchContainer.addEventListener('click', function () {
+
+            searchInput.classList.toggle('w-[150px]');
+            searchInput.classList.toggle('w-[0px]');
+
+
+            if (searchInput.classList.contains('w-[150px]')) {
+                searchInput.focus();
+            }
+        });
+
+
+        searchInput.addEventListener('blur', function () {
+            searchInput.classList.remove('w-[150px]');
+            searchInput.classList.add('w-[0px]');
+        });
+
+
+        // navbar animate ===============================================
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        const navbar2 = document.querySelector('.navbar-news');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                navbar2.style.transform = 'translateY(-100%)';
+            } else {
+                navbar2.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function () {
+                navbar2.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        // navbar di click ===============================================
+        const btnNavBerubah = [
+            ...document.getElementsByClassName('navbarBeranda'),
+            ...document.getElementsByClassName('navbarArtikel'),
+            ...document.getElementsByClassName('navbarPilihan'),
+            ...document.getElementsByClassName('navbarPenulis'),
+        ];
+
+
+        function ressetNavPerubahan() {
+
+            btnNavBerubah.forEach(btn => {
+
+                btn.classList.remove('text-black', 'pjs-m');
+            });
+        }
+
+        btnNavBerubah.forEach(btn => {
+            btn.addEventListener('click', () => {
+                ressetNavPerubahan(); 
+                btn.classList.add('text-black', 'pjs-m'); 
+            });
+        });
+
+
+        // scroll main ===============================================
+        const boxWrapper = document.getElementById('scrollMain');
+        const leftBtn = document.getElementById('sL-Main');
+        const rightBtn = document.getElementById('sR-Main');
+
+        let scrollAmount = 0;
+        const scrollPercentage = 100; 
+        let maxClicks = 1;
+        let clickCountLeft = 0;
+        let clickCountRight = 0;
+
+        function updateButtonStates() {
+            leftBtn.disabled = (scrollAmount === 0);
+            rightBtn.disabled = (scrollAmount >= 100); 
+        }
+
+        rightBtn.addEventListener('click', () => {
+            if (clickCountRight < maxClicks) {
+                scrollAmount += scrollPercentage;
+                if (scrollAmount > 100) scrollAmount = 100; 
+                boxWrapper.style.transform = `translateX(-${scrollAmount}%)`;
+                clickCountRight++;
+                clickCountLeft = 0;
+
+                rightBtn.classList.add('bg-black/10', 'text-black/80');
+                rightBtn.classList.remove('text-white', 'hover:bg-transparent');
+                leftBtn.classList.remove('text-black/80', 'bg-black/10');
+                leftBtn.classList.add('bgRed', 'text-white', 'hover:bg-transparent', 'hover:text-black/80');
+
+                updateButtonStates();
+            }
+        });
+
+        leftBtn.addEventListener('click', () => {
+            if (clickCountLeft < maxClicks) {
+                scrollAmount -= scrollPercentage;
+                if (scrollAmount < 0) scrollAmount = 0;
+                boxWrapper.style.transform = `translateX(-${scrollAmount}%)`;
+                clickCountLeft++;
+                clickCountRight = 0;
+
+                leftBtn.classList.add('bg-black/10', 'text-black/80');
+                leftBtn.classList.remove('text-white', 'hover:bg-transparent');
+                rightBtn.classList.remove('text-black/80', 'bg-black/10');
+                rightBtn.classList.add('bgRed', 'text-white', 'hover:bg-transparent', 'hover:text-black/80');
+
+                updateButtonStates();
+            }
+        });
+
+        updateButtonStates();
+
+        // scroll Penulis ===============================================
+        const boxWrapperPenulis = document.getElementById('scrollPenulis');
+        const leftBtnPenulis = document.getElementById('sL-Penulis');
+        const rightBtnPenulis = document.getElementById('sR-Penulis');
+
+        const dot1Pe = document.getElementById('dot1Penulis');
+        const dot2Pe = document.getElementById('dot2Penulis');
+
+        let scrollAmountPenulis = 0;
+        const scrollDistancePenulis = 1380; 
+        const maxScrollPenulis = (boxWrapperPenulis.children.length - 1) * scrollDistancePenulis; 
+        const maxClicksPenulis = 1; 
+        let clickCountLeftPenulis = 0; 
+        let clickCountRightPenulis = 0;
+
+        function updateButtonStatesPenulis() {
+            leftBtnPenulis.disabled = (scrollAmountPenulis === 0);
+            rightBtnPenulis.disabled = (scrollAmountPenulis === maxScrollPenulis);
+        }
+
+        rightBtnPenulis.addEventListener('click', () => {
+            if (clickCountRightPenulis < maxClicksPenulis) {
+                scrollAmountPenulis += scrollDistancePenulis;
+                if (scrollAmountPenulis > maxScrollPenulis) scrollAmountPenulis = maxScrollPenulis;
+                boxWrapperPenulis.style.transform = `translateX(-${scrollAmountPenulis}px)`;
+                clickCountRightPenulis++;
+                clickCountLeftPenulis = 0;
+                rightBtnPenulis.classList.add('bg-black/10', 'text-black/80');
+                rightBtnPenulis.classList.remove('text-white', 'hover:bg-transparent');
+
+                leftBtnPenulis.classList.remove('text-black/80', 'bg-black/10');
+                leftBtnPenulis.classList.add('bgRed', 'text-white', 'hover:bg-transparent',
+                    'hover:text-black/80');
+                dot1Pe.classList.remove('bgRed', 'w-[24px]'),
+                    dot1Pe.classList.add('bg-black/10', 'w-[12px]'),
+
+                    dot2Pe.classList.remove('bg-black/10', 'w-[12px]'),
+                    dot2Pe.classList.add('bgRed', 'w-[24px]'),
+
+                    updateButtonStatesPenulis();
+            }
+        });
+
+        leftBtnPenulis.addEventListener('click', () => {
+            if (clickCountLeftPenulis < maxClicksPenulis) {
+                scrollAmountPenulis -= scrollDistancePenulis;
+                if (scrollAmountPenulis < 0) scrollAmountPenulis = 0;
+                boxWrapperPenulis.style.transform = `translateX(-${scrollAmountPenulis}px)`;
+                clickCountLeftPenulis++;
+                clickCountRightPenulis = 0; 
+                leftBtnPenulis.classList.add('bg-black/10', 'text-black/80');
+                leftBtnPenulis.classList.remove('text-white', 'hover:bg-transparent');
+
+                rightBtnPenulis.classList.remove('text-black/80', 'bg-black/10');
+                rightBtnPenulis.classList.add('bgRed', 'text-white', 'hover:bg-transparent',
+                    'hover:text-black/80');
+
+                dot1Pe.classList.remove('bg-black/10', 'w-[12px]'),
+                    dot1Pe.classList.add('bgRed', 'w-[24px]'),
+
+                    dot2Pe.classList.remove('bgRed', 'w-[24px]'),
+                    dot2Pe.classList.add('bg-black/10', 'w-[12px]'),
+                    updateButtonStatesPenulis();
+            }
+        });
+
+        updateButtonStatesPenulis();
+
+        // scroll Pilihan ===============================================
+        const leftContainer = document.getElementById('containerLeft-pi');
+        const rightContainer = document.getElementById('containerRight-pi');
+
+        const rightBtnPilihan = document.getElementById('sR-Pi');
+        const leftBtnPilihan = document.getElementById('sL-Pi');
+
+        const dot1Pi = document.getElementById('dot1Pilihan');
+        const dot2Pi = document.getElementById('dot2Pilihan');
+
+        const img = document.getElementById('imgC');
+        const pfp = document.getElementById('pfpC');
+        const name = document.getElementById('nameC');
+        const ago = document.getElementById('agoC');
+        const type = document.getElementById('typeC');
+        const title = document.getElementById('titleC');
+        const desc = document.getElementById('descC');
+
+        let scrollPositionLeft = 0;
+        let scrollPositionRight = 0;
+        const boxWidth = 380; 
+        const totalBoxes = 2; 
+
+
+        function updateScroll() {
+            leftContainer.style.transform = `translateX(${scrollPositionLeft}px)`; 
+            rightContainer.style.transform = `translateX(-${scrollPositionRight}px)`;
+        }
+
+
+        function updateButtonState() {
+            rightBtnPilihan.disabled = scrollPositionRight >= boxWidth * (totalBoxes - 1);
+            leftBtnPilihan.disabled = scrollPositionLeft <= 0;
+        }
+
+
+        rightBtnPilihan.addEventListener('click', () => {
+
+            scrollPositionLeft += boxWidth; 
+            if (scrollPositionLeft >= boxWidth * totalBoxes) {
+                scrollPositionLeft = 0;
+            }
+            updateScroll();
+
+
+            scrollPositionRight += boxWidth; 
+            if (scrollPositionRight >= boxWidth * totalBoxes) {
+                scrollPositionRight = 0; 
+            }
+            updateScroll();
+
+
+            updateButtonState();
+
+            rightBtnPilihan.classList.add('bg-black/10', 'text-black/80');
+            rightBtnPilihan.classList.remove('text-white', 'hover:bg-transparent');
+
+            leftBtnPilihan.classList.add('bgRed', 'text-white', 'hover:bg-transparent', 'hover:text-black/80');
+            leftBtnPilihan.classList.remove('text-black/80', 'bg-black/10');
+
+            dot1Pi.classList.remove('bgRed', 'w-[24px]'),
+            dot1Pi.classList.add('bg-black/10', 'w-[12px]'),
+
+            dot2Pi.classList.remove('bg-black/10', 'w-[12px]'),
+            dot2Pi.classList.add('bgRed', 'w-[24px]'),
+
+            img.src = 'https://i.pinimg.com/736x/48/66/ae/4866ae94a99902d7351dfa79bb8a3fa4.jpg';
+            pfp.src = '/img/azka.png';
+            name.textContent = 'azka';
+            ago.textContent = '4 jam yang lalu';
+            type.textContent = 'Seni & Kerajinan';
+            title.textContent = 'Tenun Ikat: Kain Tradisional yang Merajut Warna dan Sejarah Nusantara';
+            desc.innerHTML =
+                `Tenun ikat adalah salah satu kerajinan tangan tradisional yang paling rumit dan penuh nilai artistik di Indonesia... 
+                <a href="/src/html/detail.html?id=8"
+                class="textRed hover:text-red-700 pjs-m duration-75">
+                Baca selengkapnya</a>`;
+
+            rightBtnPilihan.disabled = true;
+            leftBtnPilihan.disabled = false; 
+        });
+
+
+        leftBtnPilihan.addEventListener('click', () => {
+
+            scrollPositionLeft -= boxWidth;
+            if (scrollPositionLeft < 0) {
+                scrollPositionLeft = boxWidth * (totalBoxes - 1);
+            }
+            updateScroll();
+
+
+            scrollPositionRight -= boxWidth;
+            if (scrollPositionRight < 0) {
+                scrollPositionRight = boxWidth * (totalBoxes - 1);
+            }
+            updateScroll();
+
+            updateButtonState();
+
+            leftBtnPilihan.classList.add('bg-black/10', 'text-black/80');
+            leftBtnPilihan.classList.remove('text-white', 'hover:bg-transparent');
+
+            rightBtnPilihan.classList.add('bgRed', 'text-white', 'hover:bg-transparent', 'hover:text-black/80');
+            rightBtnPilihan.classList.remove('text-black/80', 'bg-black/10');
+
+            dot1Pi.classList.remove('bg-black/10', 'w-[12px]');
+            dot1Pi.classList.add('bgRed', 'w-[24px]');
+
+            dot2Pi.classList.remove('bgRed', 'w-[24px]');
+            dot2Pi.classList.add('bg-black/10', 'w-[12px]');
+
+            img.src = 'https://i.pinimg.com/564x/37/ed/3b/37ed3b1d8a1dcb6bd85839ae7bcff142.jpg';
+            pfp.src = 'https://i.pinimg.com/736x/47/8a/89/478a89cdd089bee40a85842323d16199.jpg';
+            name.textContent = 'Seo ah-yi';
+            ago.textContent = '10 hari yang lalu';
+            type.textContent = 'Seni & Kerajinan';
+            title.textContent = 'Kerajinan Tangan Indonesia: Dari Anyaman Bambu hingga Ukiran Kayu Jepara';
+            desc.textContent =
+                'Indonesia kaya akan kerajinan tangan yang mencerminkan keahlian dan kreativitas masyarakat lokal. Artikel ini membahas beragam kerajinan tradisional... ';
+
+            leftBtnPilihan.disabled = true;
+            rightBtnPilihan.disabled = false;
+        });
+        updateButtonState();
+
+        // navbar article click matikan button ===============================================
+        const hideArticles = [
+            document.getElementById('articleWisata'),
+            document.getElementById('articleKuliner'),
+            document.getElementById('articleSeni'),
+            document.getElementById('articleEkonomi'),
+            document.getElementById('articleBahasa'),
+            document.getElementById('articleAcara')
+        ];
+
+        const btnArticleHide = document.getElementById('btnArticleHide');
+        const showArticle = document.getElementById('articleTerkini');
+        const hideDots2 = document.getElementById('dot2Article');
+
+        hideArticles.forEach(hideArticle => {
+            hideArticle.addEventListener('click', () => {
+                btnArticleHide.style.display = 'none';
+                hideDots2.style.display = 'none';
+            });
+        });
+
+        showArticle.addEventListener('click', () => {
+            btnArticleHide.style.display = 'flex';
+            hideDots2.style.display = 'block';
+        });
+
+        // navbar berubah saat di click( article ===============================================
+
+        const btnNavArticles = [
+            document.getElementById('articleWisata'),
+            document.getElementById('articleKuliner'),
+            document.getElementById('articleSeni'),
+            document.getElementById('articleEkonomi'),
+            document.getElementById('articleBahasa'),
+            document.getElementById('articleAcara'),
+            document.getElementById('articleTerkini')
+        ];
+
+        function resetClasses() {
+            btnNavArticles.forEach(btn => {
+                btn.classList.remove('bgRed', 'text-white');
+                btn.classList.add('text-black/80');
+            });
+        }
+
+        btnNavArticles.forEach(btn => {
+            btn.addEventListener('click', () => {
+                resetClasses();
+                btn.classList.add('bgRed', 'text-white');
+                btn.classList.remove('text-black/80');
+            });
+        });
+    </script>
+    <script src="/src/js/card.js" defer></script>
+
+</body>
+
+</html>
